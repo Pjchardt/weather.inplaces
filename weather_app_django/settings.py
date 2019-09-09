@@ -93,6 +93,7 @@ WSGI_APPLICATION = 'weather_app_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 if 'DATABASE_URL' in os.environ:
+    DATABASES = {}
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 else:
     DATABASES = {
