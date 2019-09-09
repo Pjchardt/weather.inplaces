@@ -28,7 +28,7 @@ with open("{0}\\{1}".format(BASE_DIR, 'django_config.json')) as f:
 SECRET_KEY = config['key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
