@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import json
-with open("{0}\\{1}".format(BASE_DIR, 'django_config.json')) as f:
-    config = json.load(f)
-SECRET_KEY = config['key']
+if 'DARKSKY_KEY' not in os.environ:
+    import json
+    with open("{0}\\{1}".format(BASE_DIR, 'django_config.json')) as f:
+        config = json.load(f)
+    SECRET_KEY = config['key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -124,3 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

@@ -1,14 +1,18 @@
+import os
+import requests
+from geopy.geocoders import Nominatim
+
 from django.db import models
 
-from geopy.geocoders import Nominatim
-import requests
-
 DARKSKYURL = "https://api.darksky.net/forecast/"
-from django.conf import settings
-import json
-with open("{0}\\{1}".format(settings.BASE_DIR, 'django_config.json')) as f:
-    config = json.load(f)
-DSKEY = config['darksky_key']
+if 'DARKSKY_KEY' not in os.environ:
+    from django.conf import settings
+    import json
+    with open("{0}\\{1}".format(settings.BASE_DIR, 'django_config.json')) as f:
+        config = json.load(f)
+    DSKEY = config['darksky_key']
+else:
+    DSKEY = os.environ['DARKSKY_KEY']
 
 # Create your models here.
 class User(models.Model):
