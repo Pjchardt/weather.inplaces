@@ -24,7 +24,6 @@ def index(request):
             return redirect('/weather/' + name)
         else:
             return render(request, 'weather/index.html', {'form': form, 'message' : "There was a problem with the form. Please try again"})
-
     form = NameForm()
     return render(request, 'weather/index.html', {'form': form})
 
