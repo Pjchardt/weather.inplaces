@@ -35,6 +35,8 @@ if 'DARKSKY_KEY' not in os.environ:
     with open("{0}\\{1}".format(BASE_DIR, 'django_config.json')) as f:
         config = json.load(f)
     SECRET_KEY = config['key']
+else:
+    SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
