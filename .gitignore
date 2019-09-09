@@ -1,3 +1,16 @@
+### Project ###
+django_config.json
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+.env
+db.sqlite3
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

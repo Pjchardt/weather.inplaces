@@ -1,0 +1,53 @@
+{% extends 'weather\base.html' %}
+
+{% block content %}
+
+  <div class = "box-white-user">
+    <div class = "logout">
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" class="button" value="Logout" name="logout_btn">
+      </form>
+    </div>
+
+    <h1>weather.inplaces</h1>
+
+    {% if user %}
+
+      <h2 class="user-header">greetings {{user.user_name}}!</h2>
+      <p>Enter a location for weather info.</p>
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="button" value="Get Weather">
+      </form>
+      {% if message %}
+        <p class="error-message">{{message}}</p>
+      {% endif %}
+      <div class="table-box">
+        <table>
+        <tr>
+          <th>Location</th>
+          <th>Weather</th>
+          <th>Temperature</th>
+          <th>Remove</th>
+        </tr>
+        {% for child in user.child_set.all %}
+          <tr>
+            <td class='crop'>{{child.location}}</td>
+            <td>{{child.weather_summary}}</td>
+            <td>{{child.weather_temperature}}&#176;F</td>
+            <td>
+              <form action="" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="child_id" value="{{child.id}}" />
+                <input type="submit" class="button" value="X" name="remove_btn">
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+        </table>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

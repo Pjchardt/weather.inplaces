@@ -1,0 +1,4 @@
+{
+	"key": "django secret key",
+	"darksky_key" : "api key"
+}
