@@ -14,7 +14,7 @@ def index(request):
             name=form.cleaned_data['user_name']
             #Confirm valid characters (cheap way to avoid url spoofing issues)
             if not re.match("^[A-Za-z0-9_]+$", name):
-                return render(request, './templates/weather/index.html', {'form': form, 'message' : "Use only letters, numbers, and underscores."})
+                return render(request, 'weather/index.html', {'form': form, 'message' : "Use only letters, numbers, and underscores."})
             if not User.objects.filter(user_name=name).exists():
             #TODO: Implement checking username and prompt to create or retry login, for now just creating user
             #    return render(request, 'weather/index.html', {'form': form, 'message' : "username does not exist"})
@@ -23,9 +23,9 @@ def index(request):
                 u.save()
             return redirect('/weather/' + name)
         else:
-            return render(request, './templates/weather/index.html', {'form': form, 'message' : "There was a problem with the form. Please try again"})
+            return render(request, 'weather/index.html', {'form': form, 'message' : "There was a problem with the form. Please try again"})
     form = NameForm()
-    return render(request, './templates/weather/index.html', {'form': form})
+    return render(request, 'weather/index.html', {'form': form})
 
 def get_user(request, name):
     user = User.objects.get(user_name=name)

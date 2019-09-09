@@ -1,0 +1,165 @@
+
+body {
+  font-family: 'Abel', sans-serif;
+  background: url("/static/weather/background.jpg") 50% 0 no-repeat fixed;
+  background-color: #85a7b1;
+  height:100%;
+  font-size: 24px;
+  color: #222222;
+}
+
+p {
+  margin: 5px;
+}
+
+h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 4.5vw;
+  font-weight: lighter;
+  margin-bottom:-30px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 1.75vw;
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin-top: 35px;
+  width: 90%;
+  transform: translate(5%, 0%);
+  border-radius: 10px;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+  font-family: 'Abel', sans-serif;
+}
+
+th {
+  background-color: #EEEEEEDD;
+}
+
+tr:nth-child(even) {
+  background-color: #ADD8E688;
+
+}
+
+tr:nth-child(odd) {
+  background-color: #EEEEEE88;
+}
+
+input {
+  margin: 0px 0px 0px 10px;
+}
+
+.box-white-home {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.75));
+  width: 50%;
+  border-radius: 10px;
+  text-align:center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 10px 0px 80px 0px;
+}
+
+.box-white-user {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.75));
+  width: 50%;
+  border-radius: 10px;
+  text-align:center;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 10px 0px 80px 0px;
+}
+
+h2.user-header {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 3vw;
+  font-weight: lighter;
+  margin: 25px 0px 20px 0px;
+}
+
+.button {
+  background-color: #495351;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.logout {
+  position:absolute;
+  right:10px;
+  top:10px;
+}
+
+.error-message {
+  color: red;
+  font-style: oblique;
+  font-size: 18px;
+}
+
+.info {
+  background-color: rgba(0,0,.2,.5);
+  color: #dddddd;
+  font-size: 18px;
+  padding: 5px;
+  position:fixed;
+  right:10px;
+  bottom:10px;
+}
+
+@media (max-width: 1024px){
+
+  h1 {
+     font-size:12.5vw;
+     margin-bottom:-15px;
+  }
+
+  h2 {
+     font-size:5vw;
+  }
+
+  table {
+    font-size: 15px;
+  }
+
+  td.crop {
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden; max-width:1px;"
+  }
+
+  .box-white-home {
+    width: 90%;
+  }
+
+  .box-white-user {
+    width: 90%;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 10px 0px 80px 0px;
+  }
+
+  h2.user-header {
+    font-size: 8vw;
+  }
+
+  .button {
+    padding: 5px 5px;
+  }
+}
