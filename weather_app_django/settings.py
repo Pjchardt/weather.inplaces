@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -139,5 +138,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Activate Django-Heroku.
+# Configure Django App for Heroku.
+import django_heroku
 django_heroku.settings(locals())
