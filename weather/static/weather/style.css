@@ -2,6 +2,7 @@
 body {
   font-family: 'Abel', sans-serif;
   background: url("/static/weather/background.jpg") 50% 0 no-repeat fixed;
+  background-color: #85a7b1;
   height:100%;
   font-size: 24px;
   color: #222222;
