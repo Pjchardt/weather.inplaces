@@ -8,3 +8,4 @@ App runs on Django and uses Dark Sky API to pull weather info. API does have 100
 
 I had never used Django, nor really spent time in a relational database, so this was a great dive into web dev. Settings.py and a few other places got a bit sloppy as I tried to troubleshoot issues with heroku deployment--which ended up being a series of edge cases like a static file not having anything in it and so not getting added to git... 
 
+There were a few tasks I didn't get to. Notably the onboarding should provide a prompt when a user attempts login with a name not in the database to confirm they want to create a new user name. I also wanted to experiment with unit tests, but ran out of time after slamming my head against heroku deployment for too long. 
